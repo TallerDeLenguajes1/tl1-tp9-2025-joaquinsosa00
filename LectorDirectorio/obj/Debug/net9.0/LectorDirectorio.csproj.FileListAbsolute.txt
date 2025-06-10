@@ -12,3 +12,4 @@ C:\Users\joaqu\OneDrive\Desktop\Taller1-Tp9\tl1-tp9-2025-joaquinsosa00\LectorDir
 C:\Users\joaqu\OneDrive\Desktop\Taller1-Tp9\tl1-tp9-2025-joaquinsosa00\LectorDirectorio\obj\Debug\net9.0\LectorDirectorio.pdb
 C:\Users\joaqu\OneDrive\Desktop\Taller1-Tp9\tl1-tp9-2025-joaquinsosa00\LectorDirectorio\obj\Debug\net9.0\LectorDirectorio.genruntimeconfig.cache
 C:\Users\joaqu\OneDrive\Desktop\Taller1-Tp9\tl1-tp9-2025-joaquinsosa00\LectorDirectorio\obj\Debug\net9.0\ref\LectorDirectorio.dll
+C:\Users\joaqu\OneDrive\Desktop\Taller1-Tp9\tl1-tp9-2025-joaquinsosa00\LectorDirectorio\obj\Debug\net9.0\LectorDirectorio.sourcelink.json

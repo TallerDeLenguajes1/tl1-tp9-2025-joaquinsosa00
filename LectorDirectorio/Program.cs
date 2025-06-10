@@ -41,25 +41,34 @@ Console.WriteLine("\n********Subdirectorios encontrados*******\n");
 
             string[] archivos = Directory.GetFiles(path);
 
+        if (archivos.Length == 0)
+        {
+            Console.WriteLine("No se encontraron archivos.");
+        }
+        else
+        {
+            Console.WriteLine("***Se encontraron archivos***\n");
 
-            if (subdirectorios.Length == 0)
+            string rutaCsv = Path.Combine(path, "reporte_archivos.csv");
+
+            // Crear y escribir encabezado una sola vez
+            using (StreamWriter writer = new StreamWriter(rutaCsv))
             {
-                Console.WriteLine("No se encontraron archivos.");
-            }
-            else
-            {
-                Console.WriteLine("***Se encontraron archivos***\n");
-                foreach (string files in archivos)
+                writer.WriteLine("NombreArchivo;Tamanio(KB);UltimaModificacion");
+
+                foreach (string file in archivos)
                 {
-                    
-                    FileInfo fileInfo = new FileInfo(files);
-                    long tamañoArchivo = files.Length;
+                    FileInfo fileInfo = new FileInfo(file);
+                    long tamañoArchivo = fileInfo.Length;
                     double tamañoKB = tamañoArchivo / 1024.0;
-                    Console.WriteLine(files+"  Tamaño: "+tamañoKB.ToString("F2")+" KB");
+                    string ultimaMod = fileInfo.LastWriteTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    Console.WriteLine($"{file}  Tamaño: {tamañoKB:F2} KB");
+
+                    writer.WriteLine($"\"{fileInfo.Name}\";{tamañoKB:F2};{ultimaMod}");
                 }
             }
 
-File.Create(path + "/reporte_archivoss.csv");
-string rutaCompleta = Path.Combine(path, "reporte_archivos.csv");
-File.Create(rutaCompleta);
-
+            Console.WriteLine($"\n📁 Reporte CSV generado en: {rutaCsv}");
+        }
+    
